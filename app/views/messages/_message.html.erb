@@ -1,0 +1,6 @@
+<div>
+  <% unless message.room.is_private %>
+    <h6 class="name"> <b><%= message.user.username %></b> </h6>
+  <% end %>
+  <%= message.content %>
+</div>
