@@ -1,4 +1,8 @@
 {
     "editor.defaultFormatter": "jnbt.vscode-rufo",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "solargraph.useBundler": true,
+    "[ruby]": {
+        "editor.defaultFormatter": "misogi.ruby-rubocop"
+    }
 }

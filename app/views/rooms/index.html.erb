@@ -14,23 +14,28 @@
       <%= turbo_stream_from "rooms" %>
       <div id="rooms">
         <%= render @rooms %>
+        <hr>
+        <%= link_to 'Sign Out', signout_path, :method => :delete %>
       </div>
     </div>
   </div>
   <div class="col-md-10 bg-dark">
-  <div class="col-md-10 bg-dark text-light">
-    <% if @single_room %>
-    <h4 class="text-center"> <%= @single_room.name %> </h4>
+    <div class="col-md-10 bg-dark text-light">
+      <% if @single_room %>
 
-    <%= turbo_stream_from @single_room %>
-      <div id="messages"></div>
-      <%= render @messages %>
-     
-    <%= render partial: 'layouts/new_message_form' %>
-     
-    
-    <% end %>
+        <h4 class="text-center"> <%= @user&.username || @single_room.name %> </h4>
+        <%= turbo_stream_from @single_room %>
+
+        <div id="messages"></div>
+        <%= render @messages %>
+
+        <%= render partial: 'layouts/new_message_form' %>
+
+
+      <% end %>
+
+
     </div>
-      The chat box stays here
-    </div>
+    The chat box stays here
+  </div>
 </div>
